@@ -1,0 +1,62 @@
+<div class="container" *ngIf="imageList">
+  <div class="row" *ngFor="let img of rowIndexArray">
+    <div class="col-md-4 p-3" *ngIf="img == 0">
+      <a routerLink="/image/upload">
+        <div class="card shadow" style="width: 18rem;">
+          <img src="../../../assets/img/avatar.png" class="img-fluid" alt="" />
+          <div class="card-body mt-3">
+            <h4 class="card-title text-center">Insert New Images</h4>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-4 p-3" *ngIf="img != 0">
+      <div class="card shadow" style="width: 18rem;">
+        <img
+          [src]="imageList[3 * img - 1].imageUrl"
+          class="card-img-top"
+          alt=""
+        />
+        <div class="card-body">
+          <h4 class="card-title">{{ imageList[3 * img - 1].caption }}</h4>
+          <h5>{{ imageList[3 * img - 1].subHeading }}</h5>
+          <p class="card-text"></p>
+          <p>{{ imageList[3 * img - 1].description }}</p>
+          <p>{{ imageList[3 * img - 1].category }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 p-3" *ngIf="imageList[3 * img + 1]">
+      <div class="card shadow" style="width: 18rem;">
+        <img
+          [src]="imageList[3 * img + 1].imageUrl"
+          class="card-img-top"
+          alt=""
+        />
+        <div class="card-body">
+          <h4 class="card-title">{{ imageList[3 * img + 1].caption }}</h4>
+          <h5>{{ imageList[3 * img + 1].subHeading }}</h5>
+          <p class="card-text"></p>
+          <p>{{ imageList[3 * img + 1].description }}</p>
+          <p>{{ imageList[3 * img + 1].category }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 p-3" *ngIf="imageList[3 * img + 2]">
+      <div class="card shadow" style="width: 18rem;">
+        <img
+          [src]="imageList[3 * img + 2].imageUrl"
+          class="card-img-top"
+          alt=""
+        />
+        <div class="card-body">
+          <h4 class="card-title">{{ imageList[3 * img + 2].caption }}</h4>
+          <h5>{{ imageList[3 * img + 2].subHeading }}</h5>
+          <p class="card-text"></p>
+          <p>{{ imageList[3 * img + 2].description }}</p>
+          <p>{{ imageList[3 * img + 2].category }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
