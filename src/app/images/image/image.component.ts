@@ -10,9 +10,10 @@ import { ImageService } from '../../service/image.service';
   styleUrls: ['./image.component.scss'],
 })
 export class ImageComponent implements OnInit {
-  selectedImage: any = null;
   isSubmitted: boolean;
+  selectedImage: any = null;
   imgSrc: string = '../../../assets/img/avatar.png';
+
   formTemplate = new FormGroup({
     caption: new FormControl('', Validators.required),
     subHeading: new FormControl('', Validators.required),
